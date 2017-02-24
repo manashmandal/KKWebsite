@@ -158,41 +158,52 @@
                     <img class="img-responsive" id="3" src="http://placehold.it/400x300" alt="">
                 </a>
             </div>
+
+            <br/>
+
         </div>
 
+        <h1>About </h1>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vulputate consectetur commodo. Praesent sed lorem semper, ultrices dolor sed, finibus neque. Etiam elementum ornare fermentum. Donec ornare finibus varius. Duis feugiat ligula sit amet
+            ligula elementum, eu commodo ligula tempor. Vestibulum blandit porta nisi, ac sollicitudin sem. Phasellus volutpat sagittis aliquam. Nunc tempus quam ut felis pulvinar porttitor. In molestie viverra risus ac malesuada. Aenean nec urna tincidunt,
+            elementum est eleifend, commodo est. Cras at tristique mi, tincidunt condimentum quam. Donec pulvinar ipsum ac ligula congue, a lobortis turpis mattis. Vivamus laoreet enim nisl, eget venenatis dolor malesuada ut. Suspendisse et libero bibendum,
+            maximus orci non, ullamcorper nulla.</p>
+    </div>
 
 
 
 
-        <!-- Including Bootstrap JS (with its jQuery dependency) so that dynamic components work -->
-        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-        <!-- Latest compiled and minified JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-        <script src="js/script.js"></script>
+    <!-- Including Bootstrap JS (with its jQuery dependency) so that dynamic components work -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-        <script>
-            var toggle = false;
-            var path = "images/"
+    <script src="js/script.js"></script>
 
-            function updateImage() {
+    <script>
+        var toggle = false;
+        var path = "images/"
 
-                if (toggle) {
-                    $('#1').attr('src', path + '4.png');
-                    toggle = false;
-                } else {
-                    for (var i = 1; i < 4; i++) {
-                        $("#" + i).attr('src', path + i + '.png');
-                    }
-                    toggle = true;
+        function updateImage() {
+
+            if (toggle) {
+                $('#1').attr('src', path + '4.png');
+                toggle = false;
+            } else {
+                for (var i = 1; i < 4; i++) {
+                    $("#" + i).attr('src', path + i + '.png');
                 }
+                toggle = true;
             }
+        }
 
 
-            updateImage();
+        updateImage();
 
-            setInterval(updateImage, 2000);
-        </script>
+        setInterval(updateImage, 2000);
+    </script>
 </body>
 
 </html>
