@@ -6,11 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>--- TODO ---</title>
+    <title>Lekhochitro | KK</title>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+
+
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- Leave those next 4 lines if you care about users using IE8 -->
@@ -29,8 +31,57 @@
             border: none;
         }
         
+        button {
+            -webkit-appearance: none;
+            background: transparent;
+            border: 0;
+            outline: 0;
+        }
+        
         svg {
-            margin-right: 200px;
+            padding: 5px;
+        }
+        
+        .arrow {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            margin-top: -45px;
+            margin-left: -35px;
+            width: 70px;
+            height: 90px;
+        }
+        
+        .left {
+            left: 42%;
+        }
+        
+        .right {
+            left: 58%;
+        }
+        
+        .left:hover polyline,
+        .left:focus polyline {
+            stroke-width: 3;
+        }
+        
+        .left:active polyline {
+            stroke-width: 6;
+            transition: all 100ms ease-in-out;
+        }
+        
+        .right:hover polyline,
+        .right:focus polyline {
+            stroke-width: 3;
+        }
+        
+        .right:active polyline {
+            stroke-width: 6;
+            transition: all 100ms ease-in-out;
+        }
+        
+        polyline {
+            transition: all 250ms ease-in-out;
         }
     </style>
 
@@ -40,6 +91,11 @@
 <body>
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="http://vizjs.org/viz.v1.1.0.min.js"></script>
+    <!-- load D3js -->
+
+
+    <!-- load D3plus after D3js -->
+
 
     <div class="row">
         <div class="col-md-6 col-md-offset-6">
@@ -76,27 +132,52 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-lg-4" id="viz">
-            <svg id="chart"></svg>
+
+
+    <div class="container">
+        <h1>Featured Visualizations</h1>
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-xs-4 thumb">
+                <a class="thumbnail" href="#">
+                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-xs-4 thumb">
+                <a class="thumbnail" href="#">
+                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-xs-4 thumb">
+                <a class="thumbnail" href="#">
+                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+                </a>
+            </div>
         </div>
 
-        <div class="col-lg-4">
-            <h1>Hello Wolrd</h1>
+        <!--Arrow buttons-->
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-xs-3 thumb col-lg-offset-3 col-md-offset-3 col-xs-offset-3">
+                <a class="thumbnail" href="#">
+                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+                </a>
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-xs-3 thumb">
+                <a class="thumbnail" href="#">
+                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+                </a>
+            </div>
         </div>
-    </div>
 
 
 
 
+        <!-- Including Bootstrap JS (with its jQuery dependency) so that dynamic components work -->
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-
-    <!-- Including Bootstrap JS (with its jQuery dependency) so that dynamic components work -->
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-    <script src="js/script.js"></script>
+        <script src="js/script.js"></script>
 </body>
 
 </html>

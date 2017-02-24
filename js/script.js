@@ -83,16 +83,18 @@ function resize() {
     var height = Math.round(window.innerHeight / 2.5);
 
     console.log("WIDTH " + width);
+
+
     // var width = +d3.select('#chart').attr('width');
 
-    var svg = d3.select("svg").attr("width", width).attr("height", height);
-    var g = svg.append("g").attr("transform", "translate(200,50)");
+    var svg = d3.select("svg").attr("width", '100%').attr("height", height);
+    var g = svg.append("g").attr("transform", "translate(100, 50)");
     var bp = viz.bP()
         .data(data)
         .min(12)
         .pad(1)
         .height(height - margin.top * 3 - margin.bottom * 2)
-        .width(Math.round(width * .2))
+        .width(Math.round(width * .4))
         .barSize(30)
         .fill(d => color[d.primary]);
     g.call(bp);
@@ -103,7 +105,7 @@ function resize() {
         .attr("x", d => (d.part == "primary" ? -15 : 30))
         .attr("x", d => (d.part == "primary" ? -15 : 30))
         .attr("y", d => +6)
-        .text(d => d.key)
+        // .text(d => d.key)
         .attr("text-anchor", d => (d.part == "primary" ? "end" : "start"));
     g.selectAll(".mainBars")
         .append("text").attr("class", "perc")
