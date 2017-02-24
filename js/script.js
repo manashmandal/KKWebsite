@@ -91,7 +91,7 @@ function resize() {
         .data(data)
         .min(12)
         .pad(1)
-        .height(height - margin.top * 2 - margin.bottom * 2)
+        .height(height - margin.top * 3 - margin.bottom * 2)
         .width(Math.round(width * .2))
         .barSize(30)
         .fill(d => color[d.primary]);
@@ -106,7 +106,7 @@ function resize() {
         .text(d => d.key)
         .attr("text-anchor", d => (d.part == "primary" ? "end" : "start"));
     g.selectAll(".mainBars")
-    append("text").attr("class", "perc")
+        .append("text").attr("class", "perc")
         .attr("x", d => (d.part == "primary" ? -100 : 250))
         .attr("x", function(d, i) {
             console.log(d.key);
@@ -118,7 +118,8 @@ function resize() {
         })
         .attr("y", d => +6)
         .text(function(d) {
-            return d3.format("0.0%")(d.percent)
+            // return d3.format("0.0%")(d.percent)
+            return '';
         })
         .attr("text-anchor", d => (d.part == "primary" ? "end" : "start"));
 
@@ -127,8 +128,9 @@ function resize() {
         g.selectAll(".mainBars")
             .select(".perc")
             .text(function(d) {
-                return d3.format("0.0%")(d.percent)
-            })
+                // return d3.format("0.0%")(d.percent)
+                return '';
+            });
     }
 
     function mouseout(d) {
@@ -136,7 +138,8 @@ function resize() {
         g.selectAll(".mainBars")
             .select(".perc")
             .text(function(d) {
-                return d3.format("0.0%")(d.percent)
+                // return d3.format("0.0%")(d.percent)
+                return '';
             })
     }
     // d3.select(self.frameElement).style("height", "800px");
