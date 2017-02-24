@@ -1,9 +1,10 @@
 d3.select(window).on('resize', resize);
 
+
 function resize() {
     d3.select('#chart').remove();
 
-    d3.select('body').append('svg').attr('id', 'chart');
+    d3.select('#viz').append('svg').attr('id', 'chart');
 
     console.log("Resizing");
 
@@ -66,26 +67,32 @@ function resize() {
 
     var margin = {
         top: 30,
-        right: 10,
+        right: 30,
         bottom: 10,
-        left: 10
+        left: 30
     };
 
     //var width = +d3.select('#chart').attr('' + window.innerWidth);
 
-    //var width = 960 - margin.left - margin.right;
+    // var width = window.innerWidth - margin.left - margin.right;
+
+    //var width = $("div.span4").width() - margin.left - margin.right;
 
     // var width = 960;
-    var width = window.innerWidth;
+    var width = Math.round(window.innerWidth);
+    var height = Math.round(window.innerHeight / 2.5);
 
-    var svg = d3.select("svg").attr("width", width).attr("height", 400);
+    console.log("WIDTH " + width);
+    // var width = +d3.select('#chart').attr('width');
+
+    var svg = d3.select("svg").attr("width", width).attr("height", height);
     var g = svg.append("g").attr("transform", "translate(200,50)");
     var bp = viz.bP()
         .data(data)
         .min(12)
         .pad(1)
-        .height(700)
-        .width(width - 200)
+        .height(height - margin.top * 2 - margin.bottom * 2)
+        .width(Math.round(width * .2))
         .barSize(30)
         .fill(d => color[d.primary]);
     g.call(bp);
@@ -98,8 +105,9 @@ function resize() {
         .attr("y", d => +6)
         .text(d => d.key)
         .attr("text-anchor", d => (d.part == "primary" ? "end" : "start"));
-    g.selectAll(".mainBars").append("text").attr("class", "perc")
-        //.attr("x", d => (d.part == "primary" ? -100 : 250))
+    g.selectAll(".mainBars")
+    append("text").attr("class", "perc")
+        .attr("x", d => (d.part == "primary" ? -100 : 250))
         .attr("x", function(d, i) {
             console.log(d.key);
             if (d.part == "primary") return -100;
